@@ -1,7 +1,7 @@
-package rest.rest.domain;
-
+package com.example.demo.domain;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table (name="teachers")

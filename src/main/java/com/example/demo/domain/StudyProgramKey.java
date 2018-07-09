@@ -1,4 +1,4 @@
-package rest.rest.domain;
+package com.example.demo.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;

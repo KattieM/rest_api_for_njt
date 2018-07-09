@@ -1,5 +1,4 @@
-package rest.rest.domain;
-
+package com.example.demo.domain;
 
 import java.util.Arrays;
 

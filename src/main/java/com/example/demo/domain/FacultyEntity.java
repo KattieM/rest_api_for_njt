@@ -1,5 +1,6 @@
-package rest.rest.domain;
+package com.example.demo.domain;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table (name="faculties")
@@ -15,11 +16,6 @@ public class FacultyEntity {
     @JoinColumn (name = "universityID")
     private UniversityEntity universityEntity;
 
-//    @ManyToMany
-//    private TeacherEntity teacherEntity;
-//
-//    @ManyToMany
-//    private ThesisEntity thesisEntity;
 
     public FacultyEntity() {
 

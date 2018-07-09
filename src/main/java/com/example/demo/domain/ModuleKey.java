@@ -1,16 +1,16 @@
-package rest.rest.domain;
+package com.example.demo.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Embeddable
-public class ModuleKey {
+public class ModuleKey implements Serializable{
     @ManyToOne
-    @JoinColumn(name = "degreeOfStudyID")
-    private DegreeOfStudyEntity degreeOfStudyEntity;
-
-    @ManyToOne
-    @JoinColumn (name = "studyProgramID")
-//    private StudyProgramEntity studyProgramEntity;
+    @JoinColumns({
+            @JoinColumn(name = "degreeOfStudyId"),
+            @JoinColumn(name = "studyProgramId")
+    })
+    private StudyProgramEntity studyProgramEntity;
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name = "id")
@@ -24,13 +24,14 @@ public class ModuleKey {
 //        this.studyProgramEntity = studyProgramEntity;
 //    }
 
-    public DegreeOfStudyEntity getDegreeOfStudyEntity() {
-        return degreeOfStudyEntity;
+    public StudyProgramEntity getStudyProgramEntity() {
+        return studyProgramEntity;
     }
 
-    public void setDegreeOfStudyEntity(DegreeOfStudyEntity degreeOfStudyEntity) {
-        this.degreeOfStudyEntity = degreeOfStudyEntity;
+    public void setStudyProgramEntity(StudyProgramEntity studyProgramEntity) {
+        this.studyProgramEntity = studyProgramEntity;
     }
+
 
 //    public StudyProgramEntity getStudyProgramEntity() {
 //        return studyProgramEntity;
