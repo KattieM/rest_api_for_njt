@@ -1,5 +1,7 @@
 package com.example.demo.domain;
 
+import com.example.demo.domain.ModuleKey;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,9 +12,6 @@ public class ModuleEntity {
 
     @Column(name = "name")
     private String name;
-
-//    @ManyToMany
-//    SubjectEntity subjectEntity;
 
     public ModuleEntity() {
     }

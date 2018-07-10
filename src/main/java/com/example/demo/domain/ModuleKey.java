@@ -19,10 +19,9 @@ public class ModuleKey implements Serializable{
     public ModuleKey() {
     }
 
-//    public ModuleKey(DegreeOfStudyEntity degreeOfStudyEntity, StudyProgramEntity studyProgramEntity) {
-//        this.degreeOfStudyEntity = degreeOfStudyEntity;
-//        this.studyProgramEntity = studyProgramEntity;
-//    }
+    public ModuleKey(StudyProgramEntity studyProgramEntity) {
+        this.studyProgramEntity = studyProgramEntity;
+    }
 
     public StudyProgramEntity getStudyProgramEntity() {
         return studyProgramEntity;
@@ -31,15 +30,6 @@ public class ModuleKey implements Serializable{
     public void setStudyProgramEntity(StudyProgramEntity studyProgramEntity) {
         this.studyProgramEntity = studyProgramEntity;
     }
-
-
-//    public StudyProgramEntity getStudyProgramEntity() {
-//        return studyProgramEntity;
-//    }
-//
-//    public void setStudyProgramEntity(StudyProgramEntity studyProgramEntity) {
-//        this.studyProgramEntity = studyProgramEntity;
-//    }
 
     public Long getId() {
         return id;

@@ -1,12 +1,8 @@
 package com.example.demo.domain;
 
-import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-
 
 @Embeddable
 public class SubjectModuleSemesterTypeKey implements Serializable{

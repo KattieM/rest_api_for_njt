@@ -10,7 +10,10 @@ import java.io.Serializable;
 public class TeacherThesisFacultyKey implements Serializable{
 
     @ManyToOne
-    @JoinColumn(name = "facultyId")
+    @JoinColumns({
+            @JoinColumn(name = "universityId"),
+            @JoinColumn(name = "facultyId")
+    })
     private FacultyEntity facultyEntity;
 
     @ManyToOne

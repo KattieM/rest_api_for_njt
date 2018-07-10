@@ -11,7 +11,6 @@ public class StudyProgramEntity {
     @Column (name = "studyProgram")
     private String name;
 
-
     public StudyProgramEntity() {
     }
 

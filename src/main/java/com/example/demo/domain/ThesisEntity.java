@@ -12,7 +12,6 @@ public class ThesisEntity {
     @Column (name = "thesisName")
     private String name;
 
-
     public ThesisEntity() {
 
     }

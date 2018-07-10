@@ -33,7 +33,6 @@ public class TeacherEntity {
     @ManyToOne
     private DepartmentEntity departmentEntity;
 
-
     public TeacherEntity() {
     }
 

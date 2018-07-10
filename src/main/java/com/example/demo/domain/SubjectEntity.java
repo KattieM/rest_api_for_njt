@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="subjects")
@@ -17,28 +18,17 @@ public class SubjectEntity
     @Column (name="ects")
     private int ects;
 
-    @ManyToOne
-    @JoinColumn (name = "departmentID")
-    private DepartmentEntity departmentEntity;
-
-//    @ManyToMany
-//    private ModuleEntity moduleEntity;
-//
-//    @ManyToMany
-//    private SemesterEnum semesterEnum;
-//
-//    @ManyToMany
-//    private SubjectTypeEnum subjectTypeEnum;
-//
-//    @ManyToMany
-//    private TeacherEntity teacherEntity;
+    @ManyToMany
+    @JoinColumn (name = "teacherId")
+    private List<TeacherEntity> teacherEntities;
 
     public SubjectEntity() {
     }
 
-    public SubjectEntity(String name, int ects) {
+    public SubjectEntity(String name, int ects, List<TeacherEntity> teacherEntities) {
         this.name = name;
         this.ects = ects;
+        this.teacherEntities = teacherEntities;
     }
 
     public Long getId() {
@@ -65,11 +55,11 @@ public class SubjectEntity
         this.ects = ects;
     }
 
-    public DepartmentEntity getDepartmentEntity() {
-        return departmentEntity;
+    public List<TeacherEntity> getTeacherEntities() {
+        return teacherEntities;
     }
 
-    public void setDepartmentEntity(DepartmentEntity departmentEntity) {
-        this.departmentEntity = departmentEntity;
+    public void setTeacherEntities(List<TeacherEntity> teacherEntities) {
+        this.teacherEntities = teacherEntities;
     }
 }
