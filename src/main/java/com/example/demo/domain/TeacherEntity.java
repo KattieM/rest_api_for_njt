@@ -1,4 +1,7 @@
 package com.example.demo.domain;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -31,20 +34,21 @@ public class TeacherEntity {
     private VocationEnum vocationEnum;
 
     @ManyToOne
+    @JoinColumn(name = "department_Id")
     private DepartmentEntity departmentEntity;
 
     public TeacherEntity() {
     }
 
-    public TeacherEntity(String name, String surname, String email, String phone, Date dateOfHiring, VocationEnum vocationEnum) {
+    public TeacherEntity(String name, String surname, String email, String phone, Date dateOfHiring, VocationEnum vocationEnum, DepartmentEntity departmentEntity) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.phone = phone;
         this.dateOfHiring = dateOfHiring;
         this.vocationEnum = vocationEnum;
+        this.departmentEntity = departmentEntity;
     }
-
 
     public Long getId() {
         return id;
@@ -70,7 +74,6 @@ public class TeacherEntity {
         this.surname = surname;
     }
 
-
     public String getEmail() {
         return email;
     }
@@ -86,6 +89,7 @@ public class TeacherEntity {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
     public Date getDateOfHiring() {
         return dateOfHiring;
     }
@@ -102,5 +106,11 @@ public class TeacherEntity {
         this.vocationEnum = vocationEnum;
     }
 
+    public DepartmentEntity getDepartmentEntity() {
+        return departmentEntity;
+    }
 
+    public void setDepartmentEntity(DepartmentEntity departmentEntity) {
+        this.departmentEntity = departmentEntity;
+    }
 }
