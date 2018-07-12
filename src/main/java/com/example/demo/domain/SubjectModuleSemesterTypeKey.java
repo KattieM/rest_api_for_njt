@@ -19,6 +19,7 @@ public class SubjectModuleSemesterTypeKey implements Serializable{
     private ModuleEntity moduleEntity;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private SemesterEnum semesterEnum;
 
     @ManyToOne
@@ -26,6 +27,7 @@ public class SubjectModuleSemesterTypeKey implements Serializable{
     private SubjectEntity subjectEntity;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private SubjectTypeEnum subjectTypeEnum;
 
     public SubjectModuleSemesterTypeKey() {

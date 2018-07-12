@@ -30,6 +30,8 @@ public class TeacherEntity {
     @Column (name = "dateOfHiring")
     private Date dateOfHiring;
 
+//    @ElementCollection(targetClass = VocationEnum.class)
+//    @JoinTable(name = "vocations", joinColumns = @JoinColumn(name = "id"))
     @Column (name = "vocation")
     @Enumerated(EnumType.STRING)
     private VocationEnum vocationEnum;

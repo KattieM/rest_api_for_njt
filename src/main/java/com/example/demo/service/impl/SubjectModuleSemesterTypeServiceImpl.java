@@ -25,16 +25,14 @@ public class SubjectModuleSemesterTypeServiceImpl implements SubjectModuleSemest
     SubjectRepository subjectRepository;
 
     @Override
-    public Boolean saveSubject(SubjectDto subjectDto) {
+    public SubjectModuleSemesterTypeEntity saveSubject(SubjectDto subjectDto) {
         SubjectEntity subjectEntity = new SubjectEntity(subjectDto.getName(), subjectDto.getEcts(), subjectDto.getTeacherEntities(), subjectDto.getLiteratureEntities());
         logger.info(subjectDto.getEcts()+" "+subjectDto.getName()+" ");
         SubjectEntity subEnt = subjectRepository.save(subjectEntity);
         SubjectModuleSemesterTypeKey key = new SubjectModuleSemesterTypeKey(subjectDto.getModuleEntity(), subjectDto.getSemesterEnum(), subjectEntity, subjectDto.getSubjectTypeEnum());
         logger.info(subjectDto.getModuleEntity().getModuleKey()+" "+subjectDto.getSemesterEnum()+" "+ subjectEntity+" "+ subjectDto.getSubjectTypeEnum());
         SubjectModuleSemesterTypeEntity subjectModuleSemesterTypeEntity = subjectModuleSemesterTypeRepository.save(new SubjectModuleSemesterTypeEntity(key));
-        if(subEnt!=null && subjectModuleSemesterTypeEntity!=null)
-            return true;
-        return false;
+        return subjectModuleSemesterTypeEntity;
 
     }
 
@@ -42,6 +40,11 @@ public class SubjectModuleSemesterTypeServiceImpl implements SubjectModuleSemest
     public Iterable<SubjectModuleSemesterTypeEntity> returnAll() {
         return subjectModuleSemesterTypeRepository.findAll();
     }
+
+//    @Override
+//    public void deleteSubject(SubjectEntity subjectEntity) {
+//        subjectRepository.delete(subjectEntity);
+//    }
 
 //    @Override
 //    public Iterable<SubjectModuleSemesterTypeEntity> returnById() {

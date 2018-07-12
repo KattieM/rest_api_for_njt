@@ -8,7 +8,7 @@ import java.util.Optional;
 @Service
 public interface TeacherService {
 
-    public Boolean saveTeacher(TeacherEntity teacherEntity);
+    public TeacherEntity saveTeacher(TeacherEntity teacherEntity);
     public Boolean deleteTeacher(Long teacherId);
     public Iterable<TeacherEntity> returnAll();
     public Optional<TeacherEntity> returnById(Long teacherId);

@@ -8,7 +8,8 @@ import com.example.demo.dto.SubjectDto;
 import java.util.Optional;
 
 public interface SubjectModuleSemesterTypeService {
-    public Boolean saveSubject(SubjectDto subjectDto);
+    public SubjectModuleSemesterTypeEntity saveSubject(SubjectDto subjectDto);
     public Iterable<SubjectModuleSemesterTypeEntity> returnAll();
+//    public void deleteSubject(SubjectEntity subjectEntity);
 
 }

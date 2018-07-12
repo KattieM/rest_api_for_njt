@@ -21,13 +21,13 @@ public class SubjectModuleSemesterTypeApi {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
-    Boolean saveSubject(@RequestBody SubjectDto subjectDto){
+    SubjectModuleSemesterTypeEntity saveSubject(@RequestBody SubjectDto subjectDto){
         return subjectModuleSemesterTypeService.saveSubject(subjectDto);
     }
 
-//    @RequestMapping(value = "/delete/{}", method = RequestMethod.DELETE)
-//    public @ResponseBody Boolean deleteLiiterature(@PathVariable Long literatureId){
-//        return literatureService.deleteLiterature(literatureId);
+//    @RequestMapping(value = "/delete/{subjectId}", method = RequestMethod.DELETE)
+//    public @ResponseBody Boolean deleteSubject(@PathVariable  subjectId){
+//        return subjectModuleSemesterTypeService.deleteSubject(subjectId);
 //    }
     @RequestMapping(value = "/returnAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<SubjectModuleSemesterTypeEntity> getAllTeachers(){

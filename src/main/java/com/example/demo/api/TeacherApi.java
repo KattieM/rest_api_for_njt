@@ -18,7 +18,7 @@ public class TeacherApi {
     TeacherService teacherService;
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody Boolean saveTeacher(@RequestBody TeacherEntity teacherEntity){
+    public @ResponseBody TeacherEntity saveTeacher(@RequestBody TeacherEntity teacherEntity){
         return teacherService.saveTeacher(teacherEntity);
     }
 

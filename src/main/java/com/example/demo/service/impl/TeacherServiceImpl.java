@@ -17,9 +17,9 @@ public class TeacherServiceImpl implements TeacherService{
     DepartmentRepository departmentRepository;
 
     @Override
-    public Boolean saveTeacher(TeacherEntity teacherEntity) {
-        TeacherEntity teacherEntity1 =  teacherRepository.save(teacherEntity);
-        return teacherEntity1!=null;
+    public TeacherEntity saveTeacher(TeacherEntity teacherEntity) {
+
+        return teacherRepository.save(teacherEntity);
     }
 
     @Override
