@@ -20,7 +20,7 @@ public class LiteratureApi {
     LiteratureService literatureService;
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody Boolean saveLiterature(@RequestBody LiteratureEntity literatureEntity){
+    public @ResponseBody LiteratureEntity saveLiterature(@RequestBody LiteratureEntity literatureEntity){
         return literatureService.saveLiterature(literatureEntity);
     }
 

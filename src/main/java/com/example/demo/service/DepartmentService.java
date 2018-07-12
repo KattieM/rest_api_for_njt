@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface DepartmentService {
 
-    public Boolean saveDepartment(DepartmentEntity departmentEntity);
+    public DepartmentEntity saveDepartment(DepartmentEntity departmentEntity) throws Exception;
     public Boolean deleteDepartment(Long departmentId);
     public Iterable<DepartmentEntity> returnAll();
     public Optional<DepartmentEntity> returnById(Long id);

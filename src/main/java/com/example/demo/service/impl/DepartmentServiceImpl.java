@@ -20,25 +20,22 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Autowired
     DepartmentRepository departmentRepository;
 
-    /**
-     * Method for saving department
-     *
-     * @param departmentEntity
-     * @return
-     */
     @Override
-    public Boolean saveDepartment(DepartmentEntity departmentEntity) {
+    public DepartmentEntity saveDepartment(DepartmentEntity departmentEntity) throws Exception {
         Boolean success = false;
+        DepartmentEntity dpEntity = null;
         try {
             logger.info("Started process saving dep. entity.");
-            DepartmentEntity dpEntity = departmentRepository.save(departmentEntity);
-            success = dpEntity == null ? false : true;
+            dpEntity = departmentRepository.save(departmentEntity);
         } catch (Exception e) {
             logger.error("Error while saving dep. Entity with exception: ");
             e.printStackTrace();
         }
-
-        return success;
+        if(dpEntity!=null)
+            return dpEntity;
+        else {
+            throw new Exception();
+        }
     }
 
     @Override
@@ -60,7 +57,8 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Optional<DepartmentEntity> returnById(Long id) {
+    public Optional<DepartmentEntity> returnById(Long id){
         return departmentRepository.findById(id);
+
     }
 }

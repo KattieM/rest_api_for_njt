@@ -26,7 +26,7 @@ public class DepartmentApi {
      *
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody Boolean saveDepartment(@RequestBody DepartmentEntity departmentEntity){
+    public @ResponseBody DepartmentEntity saveDepartment(@RequestBody DepartmentEntity departmentEntity) throws Exception {
         return departmentService.saveDepartment(departmentEntity);
     }
     @RequestMapping(value = "/delete/{departmentId}", method = RequestMethod.DELETE)

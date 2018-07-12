@@ -16,11 +16,9 @@ public class LiteratureServiceImpl implements LiteratureService{
     LiteratureRepository literatureRepository;
 
     @Override
-    public Boolean saveLiterature(LiteratureEntity literatureEntity) {
-         LiteratureEntity litEnt = literatureRepository.save(literatureEntity);
-         if(litEnt!=null)
-             return true;
-         return false;
+    public LiteratureEntity saveLiterature(LiteratureEntity literatureEntity) {
+         return literatureRepository.save(literatureEntity);
+
     }
 
     @Override
