@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+
 public class DepartmentServiceImpl implements DepartmentService {
 
     public static final Logger logger = LoggerFactory.getLogger(DepartmentServiceImpl.class);

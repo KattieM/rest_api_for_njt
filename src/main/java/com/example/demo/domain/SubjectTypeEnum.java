@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public enum SubjectTypeEnum {
     OBAVEZAN("obaveza"),
-    REDOVAN("redovan");
+    IZBORNI("izborni");
 
     private String value;
 

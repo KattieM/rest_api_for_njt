@@ -1,6 +1,8 @@
 package com.example.demo.domain;
 
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -18,17 +20,25 @@ public class SubjectEntity
     @Column (name="ects")
     private int ects;
 
+
     @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JoinColumn (name = "teacherId")
     private List<TeacherEntity> teacherEntities;
+
+    @OneToMany
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @JoinColumn(name = "subjectId")
+    List<LiteratureEntity> literatureEntities;
 
     public SubjectEntity() {
     }
 
-    public SubjectEntity(String name, int ects, List<TeacherEntity> teacherEntities) {
+    public SubjectEntity(String name, int ects, List<TeacherEntity> teacherEntities, List<LiteratureEntity> literatureEntities) {
         this.name = name;
         this.ects = ects;
         this.teacherEntities = teacherEntities;
+        this.literatureEntities = literatureEntities;
     }
 
     public Long getId() {
@@ -61,5 +71,13 @@ public class SubjectEntity
 
     public void setTeacherEntities(List<TeacherEntity> teacherEntities) {
         this.teacherEntities = teacherEntities;
+    }
+
+    public List<LiteratureEntity> getLiteratureEntities() {
+        return literatureEntities;
+    }
+
+    public void setLiteratureEntities(List<LiteratureEntity> literatureEntities) {
+        this.literatureEntities = literatureEntities;
     }
 }

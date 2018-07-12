@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:9000")
 @RestController
 @RequestMapping("/teacher")
 public class TeacherApi {
@@ -29,6 +30,7 @@ public class TeacherApi {
     public Iterable<TeacherEntity> getAllTeachers(){
         return teacherService.returnAll();
     }
+
     @RequestMapping(value = "/returnById/{teacherId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Optional<TeacherEntity> getTeacher(@PathVariable Long teacherId){
         return teacherService.returnById(teacherId);

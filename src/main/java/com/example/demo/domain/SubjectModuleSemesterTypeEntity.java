@@ -1,5 +1,7 @@
 package com.example.demo.domain;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;

@@ -1,11 +1,15 @@
 package com.example.demo.domain;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Embeddable
 public class SubjectModuleSemesterTypeKey implements Serializable{
+
     @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "degreeOfStudyID"),

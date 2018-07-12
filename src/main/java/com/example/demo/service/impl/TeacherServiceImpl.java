@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.dao.DepartmentRepository;
 import com.example.demo.dao.TeacherRepository;
 import com.example.demo.domain.TeacherEntity;
 import com.example.demo.service.TeacherService;
@@ -13,10 +14,11 @@ public class TeacherServiceImpl implements TeacherService{
 
     @Autowired
     TeacherRepository teacherRepository;
+    DepartmentRepository departmentRepository;
 
     @Override
     public Boolean saveTeacher(TeacherEntity teacherEntity) {
-        TeacherEntity teacherEntity1 = teacherRepository.save(teacherEntity);
+        TeacherEntity teacherEntity1 =  teacherRepository.save(teacherEntity);
         return teacherEntity1!=null;
     }
 
