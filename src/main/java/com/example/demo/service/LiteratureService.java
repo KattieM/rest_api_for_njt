@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface LiteratureService {
     public LiteratureEntity saveLiterature(LiteratureEntity literatureEntity);
-    public Boolean deleteLiterature(Long literatureId);
+    public Boolean deleteLiterature(Long literatureId) throws Exception;
     public Iterable<LiteratureEntity> returnAll();
     public Optional<LiteratureEntity> returnById(Long literatureId);
 

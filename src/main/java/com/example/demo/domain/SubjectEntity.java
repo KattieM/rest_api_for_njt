@@ -1,6 +1,7 @@
 package com.example.demo.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ public class SubjectEntity
 {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @JsonProperty("id")
     private Long id;
 
     @Column(name="name")
@@ -22,12 +24,12 @@ public class SubjectEntity
 
 
     @ManyToMany
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @Cascade(org.hibernate.annotations.CascadeType.MERGE)
     @JoinColumn (name = "teacherId")
     private List<TeacherEntity> teacherEntities;
 
     @OneToMany
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @Cascade(org.hibernate.annotations.CascadeType.MERGE)
     @JoinColumn(name = "subjectId")
     List<LiteratureEntity> literatureEntities;
 

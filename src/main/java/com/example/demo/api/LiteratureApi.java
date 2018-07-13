@@ -25,7 +25,7 @@ public class LiteratureApi {
     }
 
     @RequestMapping(value = "/delete/{literatureId}", method = RequestMethod.DELETE)
-    public @ResponseBody Boolean deleteLiiterature(@PathVariable Long literatureId){
+    public @ResponseBody Boolean deleteLiiterature(@PathVariable Long literatureId) throws Exception {
         return literatureService.deleteLiterature(literatureId);
     }
     @RequestMapping(value = "/returnAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

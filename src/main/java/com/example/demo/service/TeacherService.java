@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface TeacherService {
 
     public TeacherEntity saveTeacher(TeacherEntity teacherEntity);
-    public Boolean deleteTeacher(Long teacherId);
+    public Boolean deleteTeacher(Long teacherId) throws Exception;
     public Iterable<TeacherEntity> returnAll();
     public Optional<TeacherEntity> returnById(Long teacherId);
 

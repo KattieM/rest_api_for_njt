@@ -23,9 +23,13 @@ public class LiteratureServiceImpl implements LiteratureService{
     }
 
     @Override
-    public Boolean deleteLiterature(Long literatureId) {
+    public Boolean deleteLiterature(Long literatureId) throws Exception {
         literatureRepository.deleteById(literatureId);
-        return !literatureRepository.existsById(literatureId);
+        if(!literatureRepository.existsById(literatureId))
+            return true;
+        else
+            throw new Exception();
+        //return literatureRepository.existsById(literatureId);
     }
 
     @Override

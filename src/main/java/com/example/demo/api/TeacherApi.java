@@ -23,7 +23,7 @@ public class TeacherApi {
     }
 
     @RequestMapping(value = "/delete/{teacherId}", method = RequestMethod.DELETE)
-    public @ResponseBody Boolean deleteTeacher(@PathVariable Long teacherId){
+    public @ResponseBody Boolean deleteTeacher(@PathVariable Long teacherId) throws Exception {
         return teacherService.deleteTeacher(teacherId);
     }
     @RequestMapping(value = "/returnAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

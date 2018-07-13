@@ -1,6 +1,7 @@
 package com.example.demo.domain;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ public class TeacherEntity {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @JsonProperty("id")
     private Long id;
 
     @Column(name="name")

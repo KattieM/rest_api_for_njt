@@ -23,9 +23,12 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    public Boolean deleteTeacher(Long teacherId) {
+    public Boolean deleteTeacher(Long teacherId) throws Exception {
         teacherRepository.deleteById(teacherId);
-        return teacherRepository.existsById(teacherId)?false:true;
+        if(!teacherRepository.existsById(teacherId))
+            return false;
+        else
+            throw new Exception();
     }
 
     @Override
