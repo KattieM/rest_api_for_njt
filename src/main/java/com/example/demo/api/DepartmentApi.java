@@ -30,7 +30,7 @@ public class DepartmentApi {
         return departmentService.saveDepartment(departmentEntity);
     }
     @RequestMapping(value = "/delete/{departmentId}", method = RequestMethod.DELETE)
-    public @ResponseBody Boolean deleteDepartment(@PathVariable Long departmentId){
+    public @ResponseBody Boolean deleteDepartment(@PathVariable Long departmentId) throws Exception {
        return departmentService.deleteDepartment(departmentId);
     }
     @RequestMapping(value = "/returnAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

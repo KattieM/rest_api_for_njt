@@ -47,9 +47,9 @@ public class SecurityFilter implements Filter{
             filter.doFilter(request, response);
         } else {
             if(httpRequest.getRequestURI().contains("login")
-                    || httpRequest.getRequestURI().contains("findAllStandsUser")
-                    || httpRequest.getRequestURI().contains("findAllAdditionalServices")
-                    || httpRequest.getRequestURI().contains("createReservation")
+                    || httpRequest.getRequestURI().contains("returnAll")
+                    || httpRequest.getRequestURI().contains("delete")
+                    || httpRequest.getRequestURI().contains("save")
                     || httpRequest.getRequestURI().contains("createPresentation")
                     || httpRequest.getRequestURI().contains("mail")){
                 logger.info("URL: {}", httpRequest.getRequestURL());

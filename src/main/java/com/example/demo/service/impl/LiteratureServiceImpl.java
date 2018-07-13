@@ -17,6 +17,7 @@ public class LiteratureServiceImpl implements LiteratureService{
 
     @Override
     public LiteratureEntity saveLiterature(LiteratureEntity literatureEntity) {
+        System.out.println(literatureEntity.getAuthorEntities());
          return literatureRepository.save(literatureEntity);
 
     }

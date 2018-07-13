@@ -3,6 +3,7 @@ package com.example.demo.service.impl;
 import com.example.demo.dao.DepartmentRepository;
 import com.example.demo.domain.DepartmentEntity;
 import com.example.demo.service.DepartmentService;
+import jdk.nashorn.internal.ir.debug.JSONWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,13 +40,16 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Boolean deleteDepartment(Long departmentId) {
+    public Boolean deleteDepartment(Long departmentId) throws Exception {
         try{
+            logger.info(departmentId+"");
             departmentRepository.deleteById(departmentId);
             if(!departmentRepository.existsById(departmentId))
                 return true;
         } catch (Exception ex){
             logger.error("Error while deleting requested department");
+throw new Exception();
+
         }
         return false;
 
