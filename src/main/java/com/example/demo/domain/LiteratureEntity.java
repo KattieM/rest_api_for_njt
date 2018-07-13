@@ -15,6 +15,8 @@ public class LiteratureEntity {
     @Column (name = "literatureName")
     private String name;
 
+    @Column(name = "isbn")
+    private String isbn;
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<AuthorEntity> authorEntities;
@@ -23,34 +25,6 @@ public class LiteratureEntity {
     public LiteratureEntity() {
     }
 
-    public LiteratureEntity(String name, List<AuthorEntity> authorEntities) {
-        this.name = name;
-        this.authorEntities = authorEntities;
 
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<AuthorEntity> getAuthorEntities() {
-        return authorEntities;
-    }
-
-    public void setAuthorEntities(List<AuthorEntity> authorEntities) {
-        this.authorEntities = authorEntities;
-    }
 
 }

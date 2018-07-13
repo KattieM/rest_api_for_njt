@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "credentials")
@@ -10,9 +11,11 @@ public class Credentials {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotNull
     @Column(name = "username")
     private String username;
 
+    @NotNull
     @Column(name = "password")
     private String password;
 

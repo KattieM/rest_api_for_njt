@@ -21,10 +21,11 @@ public class TeacherEntity {
     @Column(name="surname")
     private String surname;
 
+
     @Column(name = "email")
     private String email;
 
-    @Column (name = "phone")
+    @Column (name = "phone", length = 10)
     private String phone;
 
     @Column (name = "dateOfHiring")
